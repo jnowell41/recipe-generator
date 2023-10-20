@@ -1,9 +1,13 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import ingredientsReducer from '../features/ingredients/ingredientsSlice';
+import mealsReducer from '../features/meals/mealSlice';
+import recipesReducer from '../features/recipes/recipeSlice';
 
 export const store = configureStore({
   reducer: {
-    ingredients:ingredientsReducer
+    ingredients:ingredientsReducer,
+    meals:mealsReducer,
+    recipes:recipesReducer
   },
 });
 

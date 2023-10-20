@@ -1,0 +1,13 @@
+.selectedContainer {
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+}
+.selectedContainer div {
+    margin-bottom:8px;
+    font-size:1.2rem;
+    font-weight:600;
+}
+.hide {
+    display:none;
+}
