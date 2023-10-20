@@ -29,11 +29,14 @@ export const fetchMealsAsync = createAsyncThunk(
 
 function prependToState(state:stateMealsInterface, payload:MainMealsInterface) {
     let currentState = state.data;
-    payload.meals.forEach(el => {
-        if(currentState.meals.filter(x => x.idMeal === el.idMeal).length === 0) {
-            currentState.meals.push(el);
-        }
-    });
+    if(payload.meals) {
+        payload.meals.forEach(el => {
+            if(currentState.meals.filter(x => x.idMeal === el.idMeal).length === 0) {
+                currentState.meals.push(el);
+            }
+        });
+    }
+    
     return currentState;
 }
 
