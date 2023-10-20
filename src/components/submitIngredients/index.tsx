@@ -21,7 +21,7 @@ const SubmitIngredients:React.FC<SubmitIngredientsProps> = ({ingredients}) => {
 
     return (
         <Link onClick={() => clearMeals()} className={styles.container} to={`/meals?ingredients=${formattedIngredients.join('-')}`}>
-            <div>Inspect Meals</div>
+            <div>Search Meals</div>
         </Link>
     )
 }

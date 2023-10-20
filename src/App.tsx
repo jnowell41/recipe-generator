@@ -1,6 +1,7 @@
 import React from 'react';
 import IngredientsSelectionContainer from './containers/ingredientsSelection';
 import MealsPreview from './containers/mealsPreview';
+import RecipeInspection from './containers/recipeInspection';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 // TODO:
@@ -19,10 +20,13 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<IngredientsSelectionContainer />} />
-        <Route path="/meals" element={<MealsPreview/>}/>
-      </Routes>
+      <main>
+        <Routes>
+          <Route path="/" element={<IngredientsSelectionContainer />} />
+          <Route path="/meals" element={<MealsPreview/>}/>
+          <Route path="/recipe/:id" element={<RecipeInspection/>}/>
+        </Routes>
+      </main>
     </Router>
   );
 }

@@ -1,5 +1,6 @@
 import DisplayIngredients from "../../features/ingredients/displayIngredients";
 import { useState } from 'react';
+import styles from './ingredientsSelection.module.css';
 
 const IngredientsSelectionContainer = () => {
     // const inputValue = useRef('');
@@ -10,9 +11,8 @@ const IngredientsSelectionContainer = () => {
     }
 
     return (
-        <div>
-            <label>Ingredient</label>
-            <input placeholder="Search ingredient" onChange={(e) => logInput(e)}/>
+        <div className={styles.container}>
+            <input className={styles.input} placeholder="Search ingredient" onChange={(e) => logInput(e)}/>
             <DisplayIngredients input={inputValue}/>
         </div>
     )

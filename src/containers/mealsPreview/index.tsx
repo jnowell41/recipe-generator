@@ -12,6 +12,9 @@ const MealsPreview = () => {
     const dispatch = useAppDispatch();
     const meals = useAppSelector(state => state.meals.data.meals);
 
+    // TODO:
+    // - if no recipes available then make an alert and redirect back to home page
+
     useEffect(() => {
         if(ingredients !== null) {
             let newArray:string[] = [];

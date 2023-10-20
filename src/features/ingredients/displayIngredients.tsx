@@ -9,6 +9,23 @@ interface DisplayIngredientsProps {
     input:string
 }
 
+const CloseComponent:React.FC = () => {
+    return (
+      <svg className={styles.svg} xmlns="http://www.w3.org/2000/svg" data-name="Layer 2" viewBox="0 0 100 100">
+        <path
+          d="m89.95 19.24-9.19-9.19L50 40.81 19.24 10.05l-9.19 9.19L40.81 50 10.05 80.76l9.19 9.19L50 59.19l30.76 30.76 9.19-9.19L59.19 50l30.76-30.76z"
+          style={{
+            fill: 'none',
+            stroke: '#000',
+            strokeLinecap: 'round',
+            strokeLinejoin: 'round',
+            strokeWidth: '4px',
+          }}
+        />
+      </svg>
+    );
+  }
+
 const DisplayIngredients:React.FC<DisplayIngredientsProps> = ({ input }) => {
     const dispatch = useAppDispatch();
     const ingredients = useAppSelector(state => state.ingredients.data.meals);
@@ -35,6 +52,8 @@ const DisplayIngredients:React.FC<DisplayIngredientsProps> = ({ input }) => {
         if (add) {
             if (ingredientSelection.length < 6) {
                 setIngredientSelection([...ingredientSelection, strIngredient]);
+        // need to dispatch something to clear inputField
+
             } 
             else {
                 console.log('Too many ingredients, error notice here');
@@ -51,9 +70,8 @@ const DisplayIngredients:React.FC<DisplayIngredientsProps> = ({ input }) => {
 
     if(ingredients.length > 0) {
         return (
-            <div>
+            <div className={styles.container}>
                 <div className={ingredientsListStyle}>
-                    <h2>Ingredients List</h2>
                     {ingredientList.map((el:IngredientItem, key:number) => (
                         <div key={key} onClick={() => tamperList(true, el.strIngredient)}>
                             {el.strIngredient}
@@ -63,9 +81,11 @@ const DisplayIngredients:React.FC<DisplayIngredientsProps> = ({ input }) => {
                 <div className={selectedIngredientsStyle}>
                     <h2>Selected Ingredients</h2>
                     {ingredientSelection.map((ing, key) => (
-                        <div key={key}>
+                        <div className={styles.selectedItem} key={key}>
                             <span>{ing}</span>
-                            <div onClick={() => tamperList(false, ing)}>close</div>
+                            <div onClick={() => tamperList(false, ing)}>
+                                <CloseComponent/>
+                            </div>
                         </div>
                     ))}
                     <SubmitIngredients ingredients={ingredientSelection}/>
