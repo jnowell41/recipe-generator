@@ -1,9 +1,9 @@
 import React from 'react';
 import IngredientsSelectionContainer from './containers/ingredientsSelection';
 import MealsPreview from './containers/mealsPreview';
+import Header from './containers/header';
 import RecipeInspection from './containers/recipeInspection';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Header from './components/homeButton';
 
 // TODO:
 // 1. Establish initial request onload for ingredients
@@ -28,7 +28,7 @@ import Header from './components/homeButton';
 function App() {
   return (
     <Router>
-      <Header/>
+      <Header />
       <main>
         <Routes>
           <Route path="/" element={<IngredientsSelectionContainer />} />

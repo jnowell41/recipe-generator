@@ -86,3 +86,6 @@
     align-items:center;
     justify-content:space-between;
 }
+.titleWrapper:hover {
+    cursor:pointer;
+}

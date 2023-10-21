@@ -1,8 +1,14 @@
 .header {
-    width:100%;
-    max-width:600px;
     display:flex;
-    flex-direction:space-between;
+    justify-content:center;
     align-items:center;
     background-color:#94ECBE;
+    padding:8px;
+}
+.headerInner {
+    width:100%;
+    max-width:650px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }

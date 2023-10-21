@@ -124,7 +124,7 @@ const RecipeInspection = () => {
                 animate={{ scale:1, opacity:1, y:0 }}
                 className={styles.ingredientsItemContainer}>
                     <div onClick={toggleResources} className={styles.titleWrapper}>
-                        <h2>More Resources</h2>
+                        <h2>More resources</h2>
                         <CloseComponent rotate={resourcesDisplay}/>
                     </div>
                     <div className={resourcesSty}>

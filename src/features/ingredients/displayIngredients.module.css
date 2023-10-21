@@ -37,4 +37,12 @@
 }
 .ingredientTextContainer {
     overflow:hidden;
+    width:100%;
+    margin-bottom:0;
+    padding-bottom:8px;
+}
+.ingredientTextContainer div {
+    width:100%;
+    margin-bottom:0;
+    line-height:1.5;
 }
