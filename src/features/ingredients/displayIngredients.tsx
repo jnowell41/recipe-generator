@@ -4,6 +4,7 @@ import { fetchIngredientsAsync } from './ingredientsSlice';
 import { IngredientItem } from './fetchIngredients';
 import styles from './displayIngredients.module.css';
 import SubmitIngredients from '../../components/submitIngredients';
+import { motion } from 'framer-motion'; 
 
 interface DisplayIngredientsProps {
     input:string
@@ -24,7 +25,7 @@ const CloseComponent:React.FC = () => {
         />
       </svg>
     );
-  }
+}
 
 const DisplayIngredients:React.FC<DisplayIngredientsProps> = ({ input }) => {
     const dispatch = useAppDispatch();
@@ -52,8 +53,6 @@ const DisplayIngredients:React.FC<DisplayIngredientsProps> = ({ input }) => {
         if (add) {
             if (ingredientSelection.length < 6) {
                 setIngredientSelection([...ingredientSelection, strIngredient]);
-        // need to dispatch something to clear inputField
-
             } 
             else {
                 console.log('Too many ingredients, error notice here');
@@ -73,12 +72,23 @@ const DisplayIngredients:React.FC<DisplayIngredientsProps> = ({ input }) => {
             <div className={styles.container}>
                 <div className={ingredientsListStyle}>
                     {ingredientList.map((el:IngredientItem, key:number) => (
-                        <div key={key} onClick={() => tamperList(true, el.strIngredient)}>
-                            {el.strIngredient}
-                        </div>
+                        <motion.div 
+                        className={styles.ingredientTextContainer}
+                        initial={{ scale: 0.9, opacity:0, y:10 }}
+                        animate={{ scale:1, opacity:1, y:0 }}
+                        key={key} 
+                        onClick={() => tamperList(true, el.strIngredient)}>
+                            <motion.div
+                            initial={{ x:-300 }}
+                            transition={{ ease:"linear" }}
+                            animate={{ x:0 }}>{el.strIngredient}</motion.div>
+                        </motion.div>
                     ))}
                 </div>
-                <div className={selectedIngredientsStyle}>
+                <motion.div 
+                initial={{ scale: 0.9, opacity:0, y:20 }}
+                animate={{ scale:1, opacity:1, y:0 }}
+                className={selectedIngredientsStyle}>
                     <h2>Selected Ingredients</h2>
                     {ingredientSelection.map((ing, key) => (
                         <div className={styles.selectedItem} key={key}>
@@ -89,7 +99,7 @@ const DisplayIngredients:React.FC<DisplayIngredientsProps> = ({ input }) => {
                         </div>
                     ))}
                     <SubmitIngredients ingredients={ingredientSelection}/>
-                </div>
+                </motion.div>
             </div>
         )
     }

@@ -1,0 +1,8 @@
+.header {
+    width:100%;
+    max-width:600px;
+    display:flex;
+    flex-direction:space-between;
+    align-items:center;
+    background-color:#94ECBE;
+}

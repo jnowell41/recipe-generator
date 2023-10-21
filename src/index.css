@@ -9,6 +9,8 @@ body {
 
 main {
   padding:13px;
+  max-width:650px;
+  margin:auto;
 }
 
 code {

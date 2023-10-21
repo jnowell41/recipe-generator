@@ -24,3 +24,10 @@
     font-size:1.3rem;
     font-weight:600;
 }
+.intro {
+    max-width:300px;
+    font-size:1.2rem;
+    color:#1A1F16;
+    /* text-align:center; */
+    line-height:1.5;
+}

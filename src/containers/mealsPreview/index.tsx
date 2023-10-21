@@ -3,12 +3,12 @@ import { useLocation } from 'react-router-dom';
 import DisplayMeals from '../../features/meals/displayMeals';
 import { fetchMealsAsync } from '../../features/meals/mealSlice';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
+import { motion } from 'framer-motion';
+import { GetIngredientsParam } from '../../assets/globalFunctions';
 
 const MealsPreview = () => {
     // need to set parameters as lowercase with underscores for gaps
-    const { search } = useLocation();
-    const queryParams = new URLSearchParams(search);
-    const ingredients = queryParams.get('ingredients');
+    const ingredients = GetIngredientsParam();
     const dispatch = useAppDispatch();
     const meals = useAppSelector(state => state.meals.data.meals);
 
@@ -31,6 +31,9 @@ const MealsPreview = () => {
     if(meals.length > 0) {
         return (
             <div>
+                <motion.h1
+                initial={{ scale: 0.9, opacity:0 }}
+                animate={{ scale:1, opacity:1 }}>Meals</motion.h1>
                 <DisplayMeals />
             </div>
         )

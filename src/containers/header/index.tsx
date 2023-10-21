@@ -1,10 +1,12 @@
 import { useAppSelector } from "../../app/hooks";
+import HomeButton from "../../components/homeButton";
+import styles from './header.module.css';
 
 const Header = () => {
 
     return (
-        <header>
-            <div>maybe selected ingredients could go here instead of landing page and be consistent throughout routes</div>
+        <header className={styles.header}>
+            <HomeButton/>
         </header>
     )
 }
