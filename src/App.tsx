@@ -3,7 +3,7 @@ import IngredientsSelectionContainer from './containers/ingredientsSelection';
 import MealsPreview from './containers/mealsPreview';
 import Header from './containers/header';
 import RecipeInspection from './containers/recipeInspection';
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
 
 // TODO:
 // 1. Establish initial request onload for ingredients
