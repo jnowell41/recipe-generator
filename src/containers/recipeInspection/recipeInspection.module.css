@@ -69,6 +69,10 @@
 .ingredientsContent {
     display:block;
 }
+.ingredientsContent div a {
+    text-decoration:none;
+    color:#000;
+}
 .hide {
     display:none;
 }
@@ -88,4 +92,12 @@
 }
 .titleWrapper:hover {
     cursor:pointer;
+}
+@media screen and (min-width:650px) {
+    .hide {
+        display:block;
+    }
+    .svg {
+        display:none;
+    }
 }

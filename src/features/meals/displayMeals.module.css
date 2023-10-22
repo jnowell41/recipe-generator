@@ -50,6 +50,11 @@
 a {
     width:100%;
     padding-left:8px;
+    text-decoration:none;
+    color:#1A1F16;
+}
+a:hover {
+    cursor:pointer;
 }
 .svg {
     width:35px;
