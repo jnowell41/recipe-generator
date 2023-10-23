@@ -9,7 +9,7 @@ import { HashRouter as Router, Route, Routes } from "react-router-dom";
 // 1. Establish initial request onload for ingredients
 // 2. Create input which allows user to log included ingredients into an array
 // 3. Make a fetch against the meal API for each ingredient
-// 4. Make subsequent requests for each meal against their ID and prepend to an array in state
+// 4. Make subsequent requests for each meal against their ID and append to an array in state
 // 5. Only show meals which include all the ingredients selected w/ photo
 // 6. Strict mode described below
 

@@ -38,7 +38,6 @@ const DisplayMeals = () => {
 
     useEffect(() => {
         if (meals.length > 0 && !gotData) {
-            console.log(meals);
             meals.forEach(el => dispatch(fetchRecipesAsync(el.idMeal)));
             setGotData(true);
         }
@@ -65,7 +64,6 @@ const DisplayMeals = () => {
     function openModal(toOpen:boolean, src:string) {
         setModalSrc(src);
         setDisplayModal(toOpen);
-        console.log(toOpen);
     }
     const modalSty = displayModal ? styles.modal : styles.hide;
 
